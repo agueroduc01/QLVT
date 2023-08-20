@@ -23,7 +23,7 @@ namespace QLVT_DATHANG
         }
         private void SetUIConstraints()
         {
-            // Bar Manager
+            // Group Control
             txt_exportId.ReadOnly = true;
             txt_eeId.ReadOnly = true;
             txt_whsId.ReadOnly = true;
@@ -37,58 +37,52 @@ namespace QLVT_DATHANG
             dte_date.ReadOnly = true;
 
             // Group control Phieu Xuat
-            colMaPX.OptionsColumn.AllowEdit = false;
-            colNgay.OptionsColumn.AllowEdit = false;
-            colHoTenKH.OptionsColumn.AllowEdit = false;
-            colMaNV.OptionsColumn.AllowEdit = false;
-            colMaKho.OptionsColumn.AllowEdit = false;
+            colMaPX.OptionsColumn.AllowEdit = false; colMaPX.Caption = "Mã Phiếu Xuất";
+            colNgay.OptionsColumn.AllowEdit = false; colNgay.Caption = "Ngày";
             colNgay.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             colNgay.DisplayFormat.FormatString = "dd/MM/yyyy";
-
-            cbb_product.DropDownStyle = ComboBoxStyle.DropDownList;
-            txt_price.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            txt_price.Properties.DisplayFormat.FormatString = "n0";
-            txt_price.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            txt_price.Properties.EditFormat.FormatString = "n0";
-            txt_quantity.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            txt_quantity.Properties.DisplayFormat.FormatString = "n0";
-            txt_quantity.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            txt_quantity.Properties.EditFormat.FormatString = "n0";
+            colHoTenKH.OptionsColumn.AllowEdit = false; colHoTenKH.Caption = "Họ tên Khách hàng";
+            colMaNV.OptionsColumn.AllowEdit = false; colMaNV.Caption = "Mã Nhân viên";
+            colMaKho.OptionsColumn.AllowEdit = false; colMaKho.Caption = "Mã Kho";
 
             // Grid view CTPX
-            colCTPXMaPX.ReadOnly = true; colCTPXMaPX.HeaderText = "Mã Phiếu Xuất";  colCTPXMaPX.Width = 220;
-            colCTPXMaVT.ReadOnly = true; colCTPXMaVT.HeaderText = "Mã Vật Tư";      colCTPXMaVT.Width = 220;
-            colCTPXSoLuong.ReadOnly = true; colCTPXSoLuong.HeaderText = "Số Lượng"; colCTPXSoLuong.Width = 220;
-            colCTPXDonGia.ReadOnly = true; colCTPXDonGia.HeaderText = "Đơn Giá";    colCTPXDonGia.Width = 220;
+            colCTPXMaPX.HeaderText = "Mã Phiếu Xuất"; colCTPXMaPX.Width = 220; colCTPXMaPX.ReadOnly = true;
+            colCTPXVT.HeaderText = "Vật Tư"; colCTPXVT.Width = 220;
+            colCTPXSoLuong.HeaderText = "Số Lượng"; colCTPXSoLuong.Width = 220;
+            colCTPXDonGia.HeaderText = "Đơn Giá"; colCTPXDonGia.Width = 220;
 
-            
+            // Load combobox branch
+            cb_branch.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_branch.DataSource = Program.bds_subscriptionList;
+            cb_branch.DisplayMember = "TenCN";
+            cb_branch.ValueMember = "TenServer";
+            cb_branch.SelectedIndex = Program.SubsIndex;
         }
         private void TurnOnEditingState()
         {
-            gpc_info.Enabled = true;
-            gdc_PhieuXuat.Enabled = false;
-
+            // Tool bar manager 
             btn_add.Enabled = btn_edit.Enabled = btn_delete.Enabled = btn_reload.Enabled = false;
             btn_save.Enabled = btn_undo.Enabled = true;
+            // Group Info "Bảng thông tin"
+            gpc_info.Enabled = true;
+            // Grid Control "Phiếu xuất"
+            gdc_PhieuXuat.Enabled = false;
         }
         private void TurnOffEditingState()
         {
-            gpc_info.Enabled = false;
-            gdc_PhieuXuat.Enabled = true;
-
+            // Tool bar manager 
             btn_add.Enabled = btn_edit.Enabled = btn_delete.Enabled = btn_reload.Enabled = true;
             btn_save.Enabled = btn_undo.Enabled = false;
+            // Group Info "Bảng thông tin"
+            gpc_info.Enabled = false;
+            txt_exportId.ReadOnly = true;
+            // Grid Control "Phiếu xuất"
+            gdc_PhieuXuat.Enabled = true;
+            // Change State
             IsAdding = false;
+            // Context menu strip
+            ms_save.Visible = ms_cancel.Visible = true;
         }
-
-        private void phieuXuatBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bds_PhieuXuat.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS);
-
-        }
-
         private void FormExReceipt_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'DS.VatTu' table. You can move, or remove it, as needed.
@@ -104,14 +98,7 @@ namespace QLVT_DATHANG
             this.tbla_DSNV.Fill(this.DS.DsNV);
             tbla_Kho.Connection.ConnectionString = Program.ConnectionString;
             this.tbla_Kho.Fill(this.DS.Kho);
-
-            // Load combobox branch
-            cb_branch.DropDownStyle = ComboBoxStyle.DropDownList;
-            cb_branch.DataSource = Program.bds_subscriptionList;
-            cb_branch.DisplayMember = "TenCN";
-            cb_branch.ValueMember = "TenServer";
-            cb_branch.SelectedIndex = Program.SubsIndex;
-
+             
             SetUIConstraints();
 
             // 5. Decentralization
@@ -130,28 +117,31 @@ namespace QLVT_DATHANG
         private void btn_add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TurnOnEditingState();
+
+            RowIndex = bds_PhieuXuat.Position;
             NewRow = bds_PhieuXuat.AddNew();
             IsAdding = true;
 
-            // 
             txt_exportId.ReadOnly = false;
+            // Date Edit 
             dte_date.Enabled = false;
             dte_date.EditValue = DateTime.Now.ToString();
             dte_date.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-        }
 
+            // Strip Menu Item
+            ms_save.Visible = ms_cancel.Visible = false;
+        }
         private void btn_edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             TurnOnEditingState();
         }
-
         private void btn_delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // 1. Check wheather this Employee can be deleted
             // A row can not be deleted if it's referenced to another Table (it's a FK)
             string ExReceiptId = "";
 
-            var deleteConfirm = MessageBox.Show("Are you sure to delete this Export Receipt?", "Confirm", MessageBoxButtons.OKCancel);
+            var deleteConfirm = MessageBox.Show("Phiếu Xuất sẽ bị xóa vĩnh viễn, bạn có muốn xóa?", "Xác nhận xóa", MessageBoxButtons.OKCancel);
             if (deleteConfirm == DialogResult.OK)
             {
                 try
@@ -165,7 +155,7 @@ namespace QLVT_DATHANG
                 }
                 catch (Exception ex) // There maybe it's deleted it in UI but not in DB -> Re fill the UI
                 {
-                    MessageBox.Show("Error when deleting this employee. Please delete again" + ex.Message, "", MessageBoxButtons.OK); // Sometimes, computers are crazy so ... 
+                    MessageBox.Show("Xảy ra lỗi khi xóa Phiếu Xuất. Vui lòng thử lại\n" + ex.Message, "Lỗi Xóa ở DB", MessageBoxButtons.OK); // Sometimes, computers are crazy so ... 
                     tbla_PhieuXuat.Fill(DS.PhieuXuat);
                     bds_PhieuXuat.Position = bds_PhieuXuat.Find("MaPX", ExReceiptId); // Jump to Receipt position
                     return;
@@ -175,58 +165,125 @@ namespace QLVT_DATHANG
             if (bds_PhieuXuat.Count == 0)
                 btn_delete.Enabled = false;
         }
-
-        private void btn_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private bool ValidateInputs()
         {
             if (txt_exportId.Text.Trim() == "")
             {
-                MessageBox.Show("Cannot blank Import ID!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng điền thông tin Mã Phiếu Xuất!", "Lỗi nhập liệu", MessageBoxButtons.OK);
                 txt_exportId.Focus();
-                return;
+                return false;
             }
             if (dte_date.EditValue.ToString().Trim() == "")
             {
-                MessageBox.Show("Cannot blank Date!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng điền thông tin Ngày!", "Lỗi nhập liệu", MessageBoxButtons.OK);
                 dte_date.Focus();
-                return;
+                return false;
             }
             if (txt_cusName.Text.Trim() == "")
             {
-                MessageBox.Show("Cannot blank Customer!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng điền thông tin Khách hàng!", "Lỗi nhập liệu", MessageBoxButtons.OK);
                 txt_cusName.Focus();
-                return;
+                return false;
             }
             if (cbb_fullname.Text.Trim() == "")
             {
-                MessageBox.Show("Cannot blank Employee!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng điền thông tin Nhân viên!", "Lỗi nhập liệu", MessageBoxButtons.OK);
                 cbb_fullname.Focus();
-                return;
+                return false;
             }
             if (cbb_whsname.Text.Trim() == "")
             {
-                MessageBox.Show("Cannot blank Warehouse!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng điền thông tin Kho!", "Lỗi nhập liệu", MessageBoxButtons.OK);
                 cbb_whsname.Focus();
-                return;
+                return false;
             }
-            // Have to check this PhieuNhap whether has any CTPNs?
+            return true;
+        }
+        private bool AddReceipt()
+        {
+            // Validate CTPX
+            if (bds_CTPX.List.Count == 0)
+            {
+                MessageBox.Show("Khi thêm Phiếu xuất không được để trống Phiếu xuất. Vui lòng nhập lại!", "Lỗi nhập liệu");
+                return false;
+            }
 
+            // Validate CTPX inputs
+            foreach (DataRowView item in bds_CTPX)
+            {
+                if (item["MaVT"].ToString().Trim() == "")
+                {
+                    MessageBox.Show("Vật tư trong Chi tiết phiếu nhập không được để trống. Vui lòng kiểm tra lại", "Lỗi nhập liệu");
+                    return false;
+                }
+                if (item["SoLuong"].ToString().Trim() == "")
+                {
+                    MessageBox.Show("Số lượng trong Chi tiết phiếu nhập không được để trống. Vui lòng kiểm tra lại", "Lỗi nhập liệu");
+                    return false;
+                }
+                if (item["DonGia"].ToString().Trim() == "")
+                {
+                    MessageBox.Show("Đơn giá trong Chi tiết phiếu nhập không được để trống. Vui lòng kiểm tra lại", "Lỗi nhập liệu");
+                    return false;
+                }
+            }
+
+            tbla_CTPX.Connection.ConnectionString = Program.ConnectionString;
+            tbla_PhieuXuat.Connection.ConnectionString = Program.ConnectionString;
+
+            // Update PhieuXuat
             try
             {
-                bds_PhieuXuat.EndEdit();
-                bds_PhieuXuat.ResetCurrentItem();
-
-                tbla_PhieuXuat.Connection.ConnectionString = Program.ConnectionString;
                 tbla_PhieuXuat.Update(DS.PhieuXuat);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error when adding Export Receipt!" + ex.Message, "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Xảy ra lỗi khi thêm Phiếu xuất. Vui lòng thử lại\n" + ex.Message, "Lỗi ghi vào CSDL", MessageBoxButtons.OK);
+                return false;
+            }
+            // Update CTPX
+            try
+            {
+                tbla_CTPX.Update(DS.CTPX);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xảy ra lỗi khi thêm Chi tiết Phiếu xuất. Vui lòng thử lại\n" + ex.Message, "Lỗi ghi vào CSDL", MessageBoxButtons.OK);
+                return false;
+            }
+
+            return true;
+        }
+        private void btn_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!ValidateInputs())
                 return;
+
+            gdv_CTPX.EndEdit();
+            bds_CTPX.EndEdit();
+            bds_PhieuXuat.EndEdit();
+            bds_PhieuXuat.ResetCurrentItem();
+
+            if (IsAdding == true)
+            {
+                if (!AddReceipt()) return;
+            }
+            else
+            {
+                tbla_PhieuXuat.Connection.ConnectionString = Program.ConnectionString;
+                try
+                {
+                    tbla_PhieuXuat.Update(DS.PhieuXuat);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Xảy ra lỗi khi Ghi thông tin Phiếu Xuất vào CSDL. Vui lòng thử lại\n" + ex.Message, "Lỗi ghi vào CSDL", MessageBoxButtons.OK);
+                    return;
+                }
             }
 
             TurnOffEditingState();
         }
-
         private void btn_undo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             bds_PhieuXuat.CancelEdit();
@@ -235,21 +292,18 @@ namespace QLVT_DATHANG
                 var res = bds_PhieuXuat.Contains(NewRow);
                 if (res)
                     bds_PhieuXuat.Remove(NewRow);
-                IsAdding = false;
-            }
 
-
-            if (btn_add.Enabled == false)
                 bds_PhieuXuat.Position = RowIndex;
+            }
 
             TurnOffEditingState();
         }
-
         private void btn_reload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
                 tbla_PhieuXuat.Fill(DS.PhieuXuat);
+                tbla_CTPX.Fill(DS.CTPX);
             }
             catch (Exception ex)
             {
@@ -295,11 +349,14 @@ namespace QLVT_DATHANG
 
         private void cbb_fullname_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (cbb_fullname.SelectedValue != null)
             {
-                if (cbb_fullname.SelectedValue != null)
+                try
+                {
                     txt_eeId.Text = cbb_fullname.SelectedValue.ToString();
-            }catch { }
+                }
+                catch { }
+            }
         }
 
         private void cbb_whsname_SelectedIndexChanged(object sender, EventArgs e)
@@ -311,6 +368,40 @@ namespace QLVT_DATHANG
             }
             catch { }
         }
-         
+
+        private void ms_save_Click(object sender, EventArgs e)
+        {
+            gdv_CTPX.EndEdit();
+            bds_CTPX.EndEdit();
+            bds_PhieuXuat.EndEdit();
+
+            tbla_PhieuXuat.Connection.ConnectionString = Program.ConnectionString;
+            try
+            {
+                tbla_CTPX.Update(DS.CTPX);
+                MessageBox.Show("Ghi Chi tiết Phiếu Xuất vào CSDL thành công!", "Thông tin");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi ghi dữ liệu vào CSDL! Vui lòng thử lại\t" + ex.Message);
+            }
+        }
+
+        private void ms_delete_Click(object sender, EventArgs e)
+        {
+            if (bds_CTPX.Current != null)
+                bds_CTPX.RemoveCurrent();
+        }
+
+        private void ms_cancel_Click(object sender, EventArgs e)
+        {
+            tbla_CTPX.Fill(DS.CTPX);
+        }
+
+        private void txt_exportId_Leave(object sender, EventArgs e)
+        {
+            bds_PhieuXuat.EndEdit();
+            bds_PhieuXuat.ResetCurrentItem();
+        }
     }
 }

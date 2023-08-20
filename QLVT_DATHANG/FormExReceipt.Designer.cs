@@ -58,10 +58,6 @@
             this.colMaKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gdv_CTPX = new System.Windows.Forms.DataGridView();
-            this.colCTPXMaPX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCTPXMaVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCTPXSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCTPXDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bds_CTPX = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -110,6 +106,14 @@
             this.txt_exportId = new DevExpress.XtraEditors.TextEdit();
             this.tbla_DSNV = new QLVT_DATHANG.DSTableAdapters.DS_NVTableAdapter();
             this.tbla_VatTu = new QLVT_DATHANG.DSTableAdapters.VatTuTableAdapter();
+            this.colCTPXMaPX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCTPXVT = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colCTPXSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCTPXDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cms_CTPX = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ms_save = new System.Windows.Forms.ToolStripMenuItem();
+            this.ms_delete = new System.Windows.Forms.ToolStripMenuItem();
+            this.ms_cancel = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.barmngr_employee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_PhieuXuat)).BeginInit();
@@ -150,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bds_DSNV)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_exportId.Properties)).BeginInit();
+            this.cms_CTPX.SuspendLayout();
             this.SuspendLayout();
             // 
             // barmngr_employee
@@ -409,9 +414,10 @@
             this.gdv_CTPX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdv_CTPX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCTPXMaPX,
-            this.colCTPXMaVT,
+            this.colCTPXVT,
             this.colCTPXSoLuong,
             this.colCTPXDonGia});
+            this.gdv_CTPX.ContextMenuStrip = this.cms_CTPX;
             this.gdv_CTPX.DataSource = this.bds_CTPX;
             this.gdv_CTPX.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gdv_CTPX.Location = new System.Drawing.Point(942, 2);
@@ -420,38 +426,6 @@
             this.gdv_CTPX.RowTemplate.Height = 24;
             this.gdv_CTPX.Size = new System.Drawing.Size(994, 383);
             this.gdv_CTPX.TabIndex = 17;
-            // 
-            // colCTPXMaPX
-            // 
-            this.colCTPXMaPX.DataPropertyName = "MaPX";
-            this.colCTPXMaPX.HeaderText = "MaPX";
-            this.colCTPXMaPX.MinimumWidth = 6;
-            this.colCTPXMaPX.Name = "colCTPXMaPX";
-            this.colCTPXMaPX.Width = 125;
-            // 
-            // colCTPXMaVT
-            // 
-            this.colCTPXMaVT.DataPropertyName = "MaVT";
-            this.colCTPXMaVT.HeaderText = "MaVT";
-            this.colCTPXMaVT.MinimumWidth = 6;
-            this.colCTPXMaVT.Name = "colCTPXMaVT";
-            this.colCTPXMaVT.Width = 125;
-            // 
-            // colCTPXSoLuong
-            // 
-            this.colCTPXSoLuong.DataPropertyName = "SoLuong";
-            this.colCTPXSoLuong.HeaderText = "SoLuong";
-            this.colCTPXSoLuong.MinimumWidth = 6;
-            this.colCTPXSoLuong.Name = "colCTPXSoLuong";
-            this.colCTPXSoLuong.Width = 125;
-            // 
-            // colCTPXDonGia
-            // 
-            this.colCTPXDonGia.DataPropertyName = "DonGia";
-            this.colCTPXDonGia.HeaderText = "DonGia";
-            this.colCTPXDonGia.MinimumWidth = 6;
-            this.colCTPXDonGia.Name = "colCTPXDonGia";
-            this.colCTPXDonGia.Width = 125;
             // 
             // bds_CTPX
             // 
@@ -929,6 +903,73 @@
             // 
             this.tbla_VatTu.ClearBeforeFill = true;
             // 
+            // colCTPXMaPX
+            // 
+            this.colCTPXMaPX.DataPropertyName = "MaPX";
+            this.colCTPXMaPX.HeaderText = "MaPX";
+            this.colCTPXMaPX.MinimumWidth = 6;
+            this.colCTPXMaPX.Name = "colCTPXMaPX";
+            this.colCTPXMaPX.Width = 125;
+            // 
+            // colCTPXVT
+            // 
+            this.colCTPXVT.DataPropertyName = "MaVT";
+            this.colCTPXVT.DataSource = this.bds_VatTu;
+            this.colCTPXVT.DisplayMember = "TenVT";
+            this.colCTPXVT.HeaderText = "VatTu";
+            this.colCTPXVT.MinimumWidth = 6;
+            this.colCTPXVT.Name = "colCTPXVT";
+            this.colCTPXVT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCTPXVT.ValueMember = "MaVT";
+            this.colCTPXVT.Width = 125;
+            // 
+            // colCTPXSoLuong
+            // 
+            this.colCTPXSoLuong.DataPropertyName = "SoLuong";
+            this.colCTPXSoLuong.HeaderText = "SoLuong";
+            this.colCTPXSoLuong.MinimumWidth = 6;
+            this.colCTPXSoLuong.Name = "colCTPXSoLuong";
+            this.colCTPXSoLuong.Width = 125;
+            // 
+            // colCTPXDonGia
+            // 
+            this.colCTPXDonGia.DataPropertyName = "DonGia";
+            this.colCTPXDonGia.HeaderText = "DonGia";
+            this.colCTPXDonGia.MinimumWidth = 6;
+            this.colCTPXDonGia.Name = "colCTPXDonGia";
+            this.colCTPXDonGia.Width = 125;
+            // 
+            // cms_CTPX
+            // 
+            this.cms_CTPX.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cms_CTPX.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ms_save,
+            this.ms_delete,
+            this.ms_cancel});
+            this.cms_CTPX.Name = "cms_CTPX";
+            this.cms_CTPX.Size = new System.Drawing.Size(211, 104);
+            // 
+            // ms_save
+            // 
+            this.ms_save.Name = "ms_save";
+            this.ms_save.Size = new System.Drawing.Size(210, 24);
+            this.ms_save.Text = "Ghi Chi tiết Phiếu";
+            this.ms_save.Click += new System.EventHandler(this.ms_save_Click);
+            // 
+            // ms_delete
+            // 
+            this.ms_delete.Name = "ms_delete";
+            this.ms_delete.Size = new System.Drawing.Size(210, 24);
+            this.ms_delete.Text = "Xóa Chi tiết Phiếu";
+            this.ms_delete.Click += new System.EventHandler(this.ms_delete_Click);
+            // 
+            // ms_cancel
+            // 
+            this.ms_cancel.Name = "ms_cancel";
+            this.ms_cancel.Size = new System.Drawing.Size(210, 24);
+            this.ms_cancel.Text = "Hoàn tác";
+            this.ms_cancel.Click += new System.EventHandler(this.ms_cancel_Click);
+            // 
             // FormExReceipt
             // 
             this.Appearance.Options.UseFont = true;
@@ -999,6 +1040,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_exportId.Properties)).EndInit();
+            this.cms_CTPX.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1055,10 +1097,6 @@
         private DSTableAdapters.CTPXTableAdapter tbla_CTPX;
         private System.Windows.Forms.BindingSource bds_CTPX;
         private System.Windows.Forms.DataGridView gdv_CTPX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCTPXMaPX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCTPXMaVT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCTPXSoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCTPXDonGia;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label5;
         private DSTableAdapters.KhoTableAdapter tbla_Kho;
@@ -1087,5 +1125,13 @@
         private System.Windows.Forms.ComboBox cbb_product;
         private DevExpress.XtraEditors.TextEdit txt_price;
         private DevExpress.XtraEditors.TextEdit txt_quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCTPXMaPX;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCTPXVT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCTPXSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCTPXDonGia;
+        private System.Windows.Forms.ContextMenuStrip cms_CTPX;
+        private System.Windows.Forms.ToolStripMenuItem ms_save;
+        private System.Windows.Forms.ToolStripMenuItem ms_delete;
+        private System.Windows.Forms.ToolStripMenuItem ms_cancel;
     }
 }
