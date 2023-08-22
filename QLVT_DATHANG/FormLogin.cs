@@ -134,7 +134,7 @@ namespace QLVT_DATHANG
 
             Close();
 
-            Program.FormMain.page_cat.Visible = true;
+            Program.FormMain.page_cat.Visible = Program.FormMain.page_report.Visible = true;
 
             Program.FormMain.btn_login.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing; // False
             Program.FormMain.btn_logout.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime; // True

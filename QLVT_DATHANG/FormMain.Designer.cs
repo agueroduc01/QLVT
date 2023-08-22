@@ -240,6 +240,7 @@
             this.ribbonPageGroup4});
             this.page_report.Name = "page_report";
             this.page_report.Text = "Báo cáo";
+            this.page_report.Visible = false;
             // 
             // ribbonPageGroup4
             // 

@@ -40,6 +40,10 @@
             this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.lbl_toDate = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lbl_fromDate = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.lbl_title = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.table1 = new DevExpress.XtraReports.UI.XRTable();
@@ -61,10 +65,6 @@
             this.DetailData1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.DetailData3_Odd = new DevExpress.XtraReports.UI.XRControlStyle();
             this.PageInfo = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbl_fromDate = new DevExpress.XtraReports.UI.XRLabel();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.lbl_toDate = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -107,6 +107,58 @@
             this.lbl_title});
             this.ReportHeader.HeightF = 60F;
             this.ReportHeader.Name = "ReportHeader";
+            // 
+            // lbl_toDate
+            // 
+            this.lbl_toDate.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
+            this.lbl_toDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
+            this.lbl_toDate.LocationFloat = new DevExpress.Utils.PointFloat(446.5154F, 26.99999F);
+            this.lbl_toDate.Multiline = true;
+            this.lbl_toDate.Name = "lbl_toDate";
+            this.lbl_toDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbl_toDate.SizeF = new System.Drawing.SizeF(111.6667F, 23F);
+            this.lbl_toDate.StylePriority.UseFont = false;
+            this.lbl_toDate.StylePriority.UseForeColor = false;
+            this.lbl_toDate.Text = "Từ ngày";
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
+            this.xrLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(359.8487F, 26.99999F);
+            this.xrLabel3.Multiline = true;
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(76.66669F, 23F);
+            this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseForeColor = false;
+            this.xrLabel3.Text = "Đến ngày";
+            // 
+            // lbl_fromDate
+            // 
+            this.lbl_fromDate.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
+            this.lbl_fromDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
+            this.lbl_fromDate.LocationFloat = new DevExpress.Utils.PointFloat(213.3333F, 26.99999F);
+            this.lbl_fromDate.Multiline = true;
+            this.lbl_fromDate.Name = "lbl_fromDate";
+            this.lbl_fromDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbl_fromDate.SizeF = new System.Drawing.SizeF(111.6667F, 23F);
+            this.lbl_fromDate.StylePriority.UseFont = false;
+            this.lbl_fromDate.StylePriority.UseForeColor = false;
+            this.lbl_fromDate.Text = "Từ ngày";
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
+            this.xrLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(139.1667F, 26.99999F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(61.66669F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseForeColor = false;
+            this.xrLabel1.Text = "Từ ngày";
             // 
             // lbl_title
             // 
@@ -372,58 +424,6 @@
             this.PageInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
             this.PageInfo.Name = "PageInfo";
             this.PageInfo.Padding = new DevExpress.XtraPrinting.PaddingInfo(6, 6, 0, 0, 100F);
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
-            this.xrLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(139.1667F, 26.99999F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(61.66669F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseForeColor = false;
-            this.xrLabel1.Text = "Từ ngày";
-            // 
-            // lbl_fromDate
-            // 
-            this.lbl_fromDate.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
-            this.lbl_fromDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
-            this.lbl_fromDate.LocationFloat = new DevExpress.Utils.PointFloat(213.3333F, 26.99999F);
-            this.lbl_fromDate.Multiline = true;
-            this.lbl_fromDate.Name = "lbl_fromDate";
-            this.lbl_fromDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbl_fromDate.SizeF = new System.Drawing.SizeF(111.6667F, 23F);
-            this.lbl_fromDate.StylePriority.UseFont = false;
-            this.lbl_fromDate.StylePriority.UseForeColor = false;
-            this.lbl_fromDate.Text = "Từ ngày";
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
-            this.xrLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(359.8487F, 26.99999F);
-            this.xrLabel3.Multiline = true;
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(76.66669F, 23F);
-            this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.StylePriority.UseForeColor = false;
-            this.xrLabel3.Text = "Đến ngày";
-            // 
-            // lbl_toDate
-            // 
-            this.lbl_toDate.Font = new DevExpress.Drawing.DXFont("Arial", 11F);
-            this.lbl_toDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
-            this.lbl_toDate.LocationFloat = new DevExpress.Utils.PointFloat(446.5154F, 26.99999F);
-            this.lbl_toDate.Multiline = true;
-            this.lbl_toDate.Name = "lbl_toDate";
-            this.lbl_toDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbl_toDate.SizeF = new System.Drawing.SizeF(111.6667F, 23F);
-            this.lbl_toDate.StylePriority.UseFont = false;
-            this.lbl_toDate.StylePriority.UseForeColor = false;
-            this.lbl_toDate.Text = "Từ ngày";
             // 
             // Xrpt_DetailQuantityPriceImEx
             // 

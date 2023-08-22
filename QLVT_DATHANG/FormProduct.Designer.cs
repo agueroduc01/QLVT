@@ -37,6 +37,7 @@
             this.btn_save = new DevExpress.XtraBars.BarButtonItem();
             this.btn_undo = new DevExpress.XtraBars.BarButtonItem();
             this.btn_reload = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ProdList = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -72,7 +73,6 @@
             this.bds_CTPX = new System.Windows.Forms.BindingSource(this.components);
             this.bds_CTPN = new System.Windows.Forms.BindingSource(this.components);
             this.bds_CTDDH = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_ProdList = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barmngr_employee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gpc_info)).BeginInit();
             this.gpc_info.SuspendLayout();
@@ -122,13 +122,13 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ProdList),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_add),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_edit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_delete, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_save, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_undo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_reload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ProdList)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_reload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -181,6 +181,15 @@
             this.btn_reload.ImageOptions.SvgImage = global::QLVT_DATHANG.Properties.Resources.actions_refresh;
             this.btn_reload.Name = "btn_reload";
             this.btn_reload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_reload_ItemClick);
+            // 
+            // btn_ProdList
+            // 
+            this.btn_ProdList.Caption = "Danh sách vật tư";
+            this.btn_ProdList.Id = 8;
+            this.btn_ProdList.ImageOptions.SvgImage = global::QLVT_DATHANG.Properties.Resources.bo_report;
+            this.btn_ProdList.Name = "btn_ProdList";
+            this.btn_ProdList.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btn_ProdList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ProdList_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -491,13 +500,6 @@
             // 
             this.bds_CTDDH.DataMember = "FK_CTDDH_VatTu";
             this.bds_CTDDH.DataSource = this.bds_VatTu;
-            // 
-            // btn_ProdList
-            // 
-            this.btn_ProdList.Caption = "Danh sách vật tư";
-            this.btn_ProdList.Id = 8;
-            this.btn_ProdList.Name = "btn_ProdList";
-            this.btn_ProdList.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ProdList_ItemClick);
             // 
             // FormProduct
             // 

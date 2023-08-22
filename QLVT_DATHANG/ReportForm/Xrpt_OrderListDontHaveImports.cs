@@ -20,7 +20,7 @@ namespace QLVT_DATHANG.ReportForm
 
         public void FormClosedEventHandler(object sender, EventArgs e)
         {
-            MessageBox.Show(tempConnectionString);
+             
             this.sqlDataSource1.Connection.ConnectionString = tempConnectionString;
         }
     }
