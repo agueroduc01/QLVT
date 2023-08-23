@@ -223,7 +223,7 @@ namespace QLVT_DATHANG
             // A row can not be deleted if it's referenced to another Table (it's a FK)
             int EmployeeId = 0;
 
-            if (bds_DatHang.Count > 0 || bds_PhieuNhap.Count > 0 || bds_PhieuXuat.Count > 0)
+            if (bds_DatHang.Count > 0)
             {
                 MessageBox.Show(
                     "Nhập viên đã có thông tin trong Đơn đặt hàng. Không thể Xóa!",
@@ -245,7 +245,7 @@ namespace QLVT_DATHANG
                 return;
             }
 
-                var deleteConfirm = MessageBox.Show("Nhân viên sẽ bị xóa vĩnh viễn! Bạn có đồng ý Xóa nhân viên này?", "Xác nhận xóa nhân viên", MessageBoxButtons.OKCancel);
+            var deleteConfirm = MessageBox.Show("Nhân viên sẽ bị xóa vĩnh viễn! Bạn có đồng ý Xóa nhân viên này?", "Xác nhận xóa nhân viên", MessageBoxButtons.OKCancel);
             if (deleteConfirm == DialogResult.OK)
             {
                 try
@@ -282,11 +282,11 @@ namespace QLVT_DATHANG
                 if (!CheckConstraints())
                     return;
 
+                bds_NhanVien.EndEdit();
+                bds_NhanVien.ResetCurrentItem();
+                tbla_NhanVien.Connection.ConnectionString = Program.ConnectionString;
                 try
                 {
-                    bds_NhanVien.EndEdit();
-                    bds_NhanVien.ResetCurrentItem();
-                    tbla_NhanVien.Connection.ConnectionString = Program.ConnectionString;
                     tbla_NhanVien.Update(DS.NhanVien);
                 }
                 catch (Exception ex)
@@ -496,12 +496,13 @@ namespace QLVT_DATHANG
                 return;
             }
 
+            cb_deleted.Checked = true;
+            bds_NhanVien.EndEdit();
+            bds_NhanVien.ResetCurrentItem();
+            tbla_NhanVien.Connection.ConnectionString = Program.ConnectionString;
+
             try
             {
-                cb_deleted.Checked = true;
-                bds_NhanVien.EndEdit();
-                bds_NhanVien.ResetCurrentItem();
-                tbla_NhanVien.Connection.ConnectionString = Program.ConnectionString;
                 tbla_NhanVien.Update(DS.NhanVien);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
