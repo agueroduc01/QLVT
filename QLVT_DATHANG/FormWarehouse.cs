@@ -75,6 +75,10 @@ namespace QLVT_DATHANG
             cb_branch.SelectedIndex = Program.SubsIndex;
 
             gpc_info.Enabled = false;
+            colMaKho.Caption = "Mã kho";
+            colTenKho.Caption = "Tên kho";
+            colDiaChi.Caption = "Địa chỉ";
+            colMaCN.Caption = "Mã Chi nhánh";
 
             if (Program.Role == "CongTy")
             {
