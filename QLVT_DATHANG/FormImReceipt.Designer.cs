@@ -64,28 +64,13 @@
             this.cb_branch = new System.Windows.Forms.ComboBox();
             this.gpc_info = new DevExpress.XtraEditors.GroupControl();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.txt_price = new DevExpress.XtraEditors.TextEdit();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.cbb_whsname = new System.Windows.Forms.ComboBox();
             this.bds_Kho = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.txt_quantity = new DevExpress.XtraEditors.TextEdit();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txt_whsId = new DevExpress.XtraEditors.TextEdit();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.cbb_product = new System.Windows.Forms.ComboBox();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.dateEdit3 = new DevExpress.XtraEditors.DateEdit();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_eeId = new DevExpress.XtraEditors.TextEdit();
@@ -138,19 +123,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gpc_info)).BeginInit();
             this.gpc_info.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bds_Kho)).BeginInit();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_quantity.Properties)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_whsId.Properties)).BeginInit();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).BeginInit();
-            this.panel16.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_eeId.Properties)).BeginInit();
             this.panel2.SuspendLayout();
@@ -480,11 +456,8 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.panel12);
             this.panel10.Controls.Add(this.panel8);
-            this.panel10.Controls.Add(this.panel13);
             this.panel10.Controls.Add(this.panel9);
-            this.panel10.Controls.Add(this.panel14);
             this.panel10.Controls.Add(this.panel6);
             this.panel10.Controls.Add(this.panel2);
             this.panel10.Controls.Add(this.panel5);
@@ -494,36 +467,6 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(900, 280);
             this.panel10.TabIndex = 12;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.txt_price);
-            this.panel12.Controls.Add(this.label11);
-            this.panel12.Location = new System.Drawing.Point(450, 111);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(440, 48);
-            this.panel12.TabIndex = 21;
-            // 
-            // txt_price
-            // 
-            this.txt_price.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_CTPN, "DonGia", true));
-            this.txt_price.Location = new System.Drawing.Point(156, 10);
-            this.txt_price.MenuManager = this.barmngr_employee;
-            this.txt_price.Name = "txt_price";
-            this.txt_price.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_price.Properties.Appearance.Options.UseFont = true;
-            this.txt_price.Size = new System.Drawing.Size(280, 28);
-            this.txt_price.TabIndex = 17;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(77, 13);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 21);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Đơn giá";
             // 
             // panel8
             // 
@@ -564,36 +507,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Tên Kho";
             // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.txt_quantity);
-            this.panel13.Controls.Add(this.label12);
-            this.panel13.Location = new System.Drawing.Point(450, 57);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(440, 48);
-            this.panel13.TabIndex = 20;
-            // 
-            // txt_quantity
-            // 
-            this.txt_quantity.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_CTPN, "SoLuong", true));
-            this.txt_quantity.Location = new System.Drawing.Point(157, 10);
-            this.txt_quantity.MenuManager = this.barmngr_employee;
-            this.txt_quantity.Name = "txt_quantity";
-            this.txt_quantity.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_quantity.Properties.Appearance.Options.UseFont = true;
-            this.txt_quantity.Size = new System.Drawing.Size(280, 28);
-            this.txt_quantity.TabIndex = 18;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(70, 13);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 21);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Số lượng";
-            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.txt_whsId);
@@ -623,107 +536,6 @@
             this.label9.Size = new System.Drawing.Size(65, 21);
             this.label9.TabIndex = 0;
             this.label9.Text = "Mã Kho";
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.cbb_product);
-            this.panel14.Controls.Add(this.panel15);
-            this.panel14.Controls.Add(this.panel16);
-            this.panel14.Controls.Add(this.label15);
-            this.panel14.Location = new System.Drawing.Point(449, 3);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(440, 48);
-            this.panel14.TabIndex = 19;
-            // 
-            // cbb_product
-            // 
-            this.cbb_product.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bds_CTPN, "MaVT", true));
-            this.cbb_product.DataSource = this.bds_VatTu;
-            this.cbb_product.DisplayMember = "TenVT";
-            this.cbb_product.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_product.FormattingEnabled = true;
-            this.cbb_product.Location = new System.Drawing.Point(157, 10);
-            this.cbb_product.Name = "cbb_product";
-            this.cbb_product.Size = new System.Drawing.Size(279, 29);
-            this.cbb_product.TabIndex = 19;
-            this.cbb_product.ValueMember = "MaVT";
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.dateEdit3);
-            this.panel15.Controls.Add(this.label13);
-            this.panel15.Location = new System.Drawing.Point(1, 108);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(440, 48);
-            this.panel15.TabIndex = 18;
-            // 
-            // dateEdit3
-            // 
-            this.dateEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_PhieuNhap, "Ngay", true));
-            this.dateEdit3.EditValue = null;
-            this.dateEdit3.Location = new System.Drawing.Point(157, 10);
-            this.dateEdit3.MenuManager = this.barmngr_employee;
-            this.dateEdit3.Name = "dateEdit3";
-            this.dateEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEdit3.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Size = new System.Drawing.Size(280, 28);
-            this.dateEdit3.TabIndex = 16;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(97, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 21);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Ngày";
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.comboBox3);
-            this.panel16.Controls.Add(this.label14);
-            this.panel16.Location = new System.Drawing.Point(1, 54);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(440, 48);
-            this.panel16.TabIndex = 17;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_PhieuNhap, "MaSoDDH", true));
-            this.comboBox3.DataSource = this.bds_PhieuNhap;
-            this.comboBox3.DisplayMember = "MaSoDDH";
-            this.comboBox3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(156, 10);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(280, 29);
-            this.comboBox3.TabIndex = 8;
-            this.comboBox3.ValueMember = "MaSoDDH";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(13, 13);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(138, 21);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Mã Đơn đặt hàng";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(89, 13);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 21);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Vật tư";
             // 
             // panel6
             // 
@@ -802,7 +614,7 @@
             // cbb_DDH
             // 
             this.cbb_DDH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bds_PhieuNhap, "MaSoDDH", true));
-            this.cbb_DDH.DataSource = this.bds_PhieuNhap;
+            this.cbb_DDH.DataSource = this.bds_DDH_Chua_Nhap;
             this.cbb_DDH.DisplayMember = "MaSoDDH";
             this.cbb_DDH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_DDH.FormattingEnabled = true;
@@ -1109,26 +921,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gpc_info)).EndInit();
             this.gpc_info.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bds_Kho)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_quantity.Properties)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_whsId.Properties)).EndInit();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_eeId.Properties)).EndInit();
@@ -1231,21 +1029,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
-        private DevExpress.XtraEditors.DateEdit dateEdit3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private DevExpress.XtraEditors.TextEdit txt_price;
-        private DevExpress.XtraEditors.TextEdit txt_quantity;
-        private System.Windows.Forms.ComboBox cbb_product;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCTPNMaPN;
         private System.Windows.Forms.DataGridViewComboBoxColumn colCTPNVatTu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCTPNSoLuong;
