@@ -74,7 +74,6 @@ namespace QLVT_DATHANG.ReportForm
         {
             string vaiTro = Program.Role;
             string loaiPhieu = (cmb_Loai.SelectedItem.ToString() == "NHẬP" ? "N" : "X");
-            MessageBox.Show(loaiPhieu);
 
             DateTime fromDate = editFromDate.DateTime;
             DateTime toDate = editToDate.DateTime;
