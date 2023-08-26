@@ -219,6 +219,23 @@ namespace QLVT_DATHANG
             }
         }
 
+        private void LoadFprt_IOSummary()
+        {
+            var form = CheckExists(typeof(Frpt_IOSummary));
+            if (form != null)
+                form.Activate();
+            else
+            {
+                foreach (var item in MdiChildren)
+                {
+                    item.Close();
+                }
+                var frptIOSummary = new Frpt_IOSummary();
+                frptIOSummary.MdiParent = this;
+                frptIOSummary.Show();
+            }
+        }
+
         private void btn_employee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadEmployeeForm();
@@ -257,6 +274,11 @@ namespace QLVT_DATHANG
         private void btn_DetailQuantityImEx_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadFprt_DetailQuantityPriceImEx();
+        }
+
+        private void btn_IOSummary_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFprt_IOSummary();
         }
     }
 }
