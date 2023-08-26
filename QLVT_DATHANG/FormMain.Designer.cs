@@ -119,6 +119,7 @@
             this.btn_create_login.ImageOptions.SvgImage = global::QLVT_DATHANG.Properties.Resources.actions_addcircled;
             this.btn_create_login.Name = "btn_create_login";
             this.btn_create_login.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing;
+            this.btn_create_login.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_create_login_ItemClick);
             // 
             // btn_logout
             // 
@@ -287,22 +288,22 @@
             // 
             this.MaNV.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaNV.Name = "MaNV";
-            this.MaNV.Size = new System.Drawing.Size(50, 20);
-            this.MaNV.Text = "MaNV";
+            this.MaNV.Size = new System.Drawing.Size(100, 20);
+            this.MaNV.Text = "Mã Nhân viên";
             // 
             // HoTen
             // 
             this.HoTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoTen.Name = "HoTen";
-            this.HoTen.Size = new System.Drawing.Size(52, 20);
-            this.HoTen.Text = "HoTen";
+            this.HoTen.Size = new System.Drawing.Size(56, 20);
+            this.HoTen.Text = "Họ Tên";
             // 
             // Nhom
             // 
             this.Nhom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Nhom.Name = "Nhom";
             this.Nhom.Size = new System.Drawing.Size(50, 20);
-            this.Nhom.Text = "Nhom";
+            this.Nhom.Text = "Nhóm";
             // 
             // btn_IOSummary
             // 

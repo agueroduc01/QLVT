@@ -309,7 +309,7 @@ namespace QLVT_DATHANG
 
         private bool AddPhieuNhap()
         {
-            MessageBox.Show("Add one and add another will cause an error related to Foreign KEY");
+            // MessageBox.Show("Add one and add another will cause an error related to Foreign KEY");
             // Have to check this PhieuNhap whether has any CTPNs?
             if (bds_CTPN.Count == 0)
             {

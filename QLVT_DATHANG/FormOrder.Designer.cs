@@ -91,15 +91,15 @@
             this.colMaKho = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gdv_CTDDH = new System.Windows.Forms.DataGridView();
+            this.colCTDDHMaSoDDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cb_MaVT = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colCTDDHSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCTDDHDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cms_CTDDH = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ms_add = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_save = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_delete = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_cancel = new System.Windows.Forms.ToolStripMenuItem();
-            this.colCTDDHMaSoDDH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cb_MaVT = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colCTDDHSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCTDDHDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barmngr_employee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_DatHang)).BeginInit();
@@ -168,7 +168,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_save, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_undo, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_reload, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar3.OptionsBar.MultiLine = true;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "Main menu";
@@ -226,6 +226,7 @@
             // 
             this.barButtonItem1.Caption = "Danh sách các đơn đặt hàng chưa có phiếu nhập";
             this.barButtonItem1.Id = 8;
+            this.barButtonItem1.ImageOptions.SvgImage = global::QLVT_DATHANG.Properties.Resources.bo_report1;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
@@ -726,6 +727,42 @@
             this.gdv_CTDDH.Size = new System.Drawing.Size(994, 376);
             this.gdv_CTDDH.TabIndex = 16;
             // 
+            // colCTDDHMaSoDDH
+            // 
+            this.colCTDDHMaSoDDH.DataPropertyName = "MaSoDDH";
+            this.colCTDDHMaSoDDH.HeaderText = "Mã số Đơn đặt hàng";
+            this.colCTDDHMaSoDDH.MinimumWidth = 6;
+            this.colCTDDHMaSoDDH.Name = "colCTDDHMaSoDDH";
+            this.colCTDDHMaSoDDH.ReadOnly = true;
+            this.colCTDDHMaSoDDH.Width = 125;
+            // 
+            // cb_MaVT
+            // 
+            this.cb_MaVT.DataPropertyName = "MaVT";
+            this.cb_MaVT.DataSource = this.bds_VatTu;
+            this.cb_MaVT.DisplayMember = "TenVT";
+            this.cb_MaVT.HeaderText = "Vật tư";
+            this.cb_MaVT.MinimumWidth = 6;
+            this.cb_MaVT.Name = "cb_MaVT";
+            this.cb_MaVT.ValueMember = "MaVT";
+            this.cb_MaVT.Width = 125;
+            // 
+            // colCTDDHSoLuong
+            // 
+            this.colCTDDHSoLuong.DataPropertyName = "SoLuong";
+            this.colCTDDHSoLuong.HeaderText = "Số Lượng";
+            this.colCTDDHSoLuong.MinimumWidth = 6;
+            this.colCTDDHSoLuong.Name = "colCTDDHSoLuong";
+            this.colCTDDHSoLuong.Width = 125;
+            // 
+            // colCTDDHDonGia
+            // 
+            this.colCTDDHDonGia.DataPropertyName = "DonGia";
+            this.colCTDDHDonGia.HeaderText = "Đơn Giá";
+            this.colCTDDHDonGia.MinimumWidth = 6;
+            this.colCTDDHDonGia.Name = "colCTDDHDonGia";
+            this.colCTDDHDonGia.Width = 125;
+            // 
             // cms_CTDDH
             // 
             this.cms_CTDDH.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -766,42 +803,6 @@
             this.ms_cancel.Size = new System.Drawing.Size(231, 24);
             this.ms_cancel.Text = "Hoàn tác";
             this.ms_cancel.Click += new System.EventHandler(this.ms_cancel_Click);
-            // 
-            // colCTDDHMaSoDDH
-            // 
-            this.colCTDDHMaSoDDH.DataPropertyName = "MaSoDDH";
-            this.colCTDDHMaSoDDH.HeaderText = "Mã số Đơn đặt hàng";
-            this.colCTDDHMaSoDDH.MinimumWidth = 6;
-            this.colCTDDHMaSoDDH.Name = "colCTDDHMaSoDDH";
-            this.colCTDDHMaSoDDH.ReadOnly = true;
-            this.colCTDDHMaSoDDH.Width = 125;
-            // 
-            // cb_MaVT
-            // 
-            this.cb_MaVT.DataPropertyName = "MaVT";
-            this.cb_MaVT.DataSource = this.bds_VatTu;
-            this.cb_MaVT.DisplayMember = "TenVT";
-            this.cb_MaVT.HeaderText = "Vật tư";
-            this.cb_MaVT.MinimumWidth = 6;
-            this.cb_MaVT.Name = "cb_MaVT";
-            this.cb_MaVT.ValueMember = "MaVT";
-            this.cb_MaVT.Width = 125;
-            // 
-            // colCTDDHSoLuong
-            // 
-            this.colCTDDHSoLuong.DataPropertyName = "SoLuong";
-            this.colCTDDHSoLuong.HeaderText = "Số Lượng";
-            this.colCTDDHSoLuong.MinimumWidth = 6;
-            this.colCTDDHSoLuong.Name = "colCTDDHSoLuong";
-            this.colCTDDHSoLuong.Width = 125;
-            // 
-            // colCTDDHDonGia
-            // 
-            this.colCTDDHDonGia.DataPropertyName = "DonGia";
-            this.colCTDDHDonGia.HeaderText = "Đơn Giá";
-            this.colCTDDHDonGia.MinimumWidth = 6;
-            this.colCTDDHDonGia.Name = "colCTDDHDonGia";
-            this.colCTDDHDonGia.Width = 125;
             // 
             // FormOrder
             // 

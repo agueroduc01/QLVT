@@ -60,7 +60,6 @@ namespace QLVT_DATHANG
 
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
             var formMain = Program.FormMain;
             formMain.page_business.Visible = 
                 formMain.page_cat.Visible = 
@@ -68,6 +67,7 @@ namespace QLVT_DATHANG
 
             formMain.btn_logout.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing;
             formMain.btn_login.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+            formMain.btn_create_login.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing;
 
             WindowState = FormWindowState.Normal;
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -236,6 +236,23 @@ namespace QLVT_DATHANG
             }
         }
 
+        private void LoadFormUserLogin()
+        {
+            var form = CheckExists(typeof(FormUserLogin));
+            if (form != null)
+                form.Activate();
+            else
+            {
+                foreach (var item in MdiChildren)
+                {
+                    item.Close();
+                }
+                var formUserLogin = new FormUserLogin();
+                formUserLogin.MdiParent = this;
+                formUserLogin.Show();
+            }
+        }
+
         private void btn_employee_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadEmployeeForm();
@@ -275,10 +292,15 @@ namespace QLVT_DATHANG
         {
             LoadFprt_DetailQuantityPriceImEx();
         }
-
+        
         private void btn_IOSummary_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadFprt_IOSummary();
+        }
+        
+        private void btn_create_login_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFormUserLogin();
         }
     }
 }
