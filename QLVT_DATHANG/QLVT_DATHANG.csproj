@@ -146,6 +146,12 @@
     <Compile Include="ReportForm\Frpt_EmployeeActivities.Designer.cs">
       <DependentUpon>Frpt_EmployeeActivities.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm\Frpt_IOSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm\Frpt_IOSummary.Designer.cs">
+      <DependentUpon>Frpt_IOSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm\Xrpt_DetailQuantityPriceImEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -157,6 +163,12 @@
     </Compile>
     <Compile Include="ReportForm\Xrpt_EmployeeList.Designer.cs">
       <DependentUpon>Xrpt_EmployeeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm\Xrpt_IOSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportForm\Xrpt_IOSummary.Designer.cs">
+      <DependentUpon>Xrpt_IOSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportForm\Xrpt_OrderListDontHaveImports.cs">
       <SubType>Component</SubType>
@@ -220,11 +232,17 @@
     <EmbeddedResource Include="ReportForm\Frpt_EmployeeActivities.resx">
       <DependentUpon>Frpt_EmployeeActivities.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\Frpt_IOSummary.resx">
+      <DependentUpon>Frpt_IOSummary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\Xrpt_DetailQuantityPriceImEx.resx">
       <DependentUpon>Xrpt_DetailQuantityPriceImEx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\Xrpt_EmployeeList.resx">
       <DependentUpon>Xrpt_EmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\Xrpt_IOSummary.resx">
+      <DependentUpon>Xrpt_IOSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\Xrpt_OrderListDontHaveImports.resx">
       <DependentUpon>Xrpt_OrderListDontHaveImports.cs</DependentUpon>

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btn_login = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
@@ -57,6 +58,7 @@
             this.MaNV = new System.Windows.Forms.ToolStripStatusLabel();
             this.HoTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.Nhom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btn_IOSummary = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -81,10 +83,11 @@
             this.btn_warehouse,
             this.btn_order,
             this.btn_imReceipt,
-            this.btn_exReceipt});
+            this.btn_exReceipt,
+            this.btn_IOSummary});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.ribbonControl1.MaxItemId = 15;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 605;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -247,6 +250,7 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_EmployeeActivities);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_DetailQuantityImEx);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_IOSummary);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // page_system
@@ -301,6 +305,14 @@
             this.Nhom.Size = new System.Drawing.Size(50, 20);
             this.Nhom.Text = "Nhóm";
             // 
+            // btn_IOSummary
+            // 
+            this.btn_IOSummary.Caption = "Tổng hợp nhập xuất";
+            this.btn_IOSummary.Id = 15;
+            this.btn_IOSummary.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btn_IOSummary.Name = "btn_IOSummary";
+            this.btn_IOSummary.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_IOSummary_ItemClick);
+            // 
             // FormMain
             // 
             this.Appearance.Options.UseFont = true;
@@ -354,6 +366,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_order;
         private DevExpress.XtraBars.BarButtonItem btn_imReceipt;
         private DevExpress.XtraBars.BarButtonItem btn_exReceipt;
+        private DevExpress.XtraBars.BarButtonItem btn_IOSummary;
     }
 }
 

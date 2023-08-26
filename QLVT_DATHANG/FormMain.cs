@@ -219,6 +219,23 @@ namespace QLVT_DATHANG
             }
         }
 
+        private void LoadFprt_IOSummary()
+        {
+            var form = CheckExists(typeof(Frpt_IOSummary));
+            if (form != null)
+                form.Activate();
+            else
+            {
+                foreach (var item in MdiChildren)
+                {
+                    item.Close();
+                }
+                var frptIOSummary = new Frpt_IOSummary();
+                frptIOSummary.MdiParent = this;
+                frptIOSummary.Show();
+            }
+        }
+
         private void LoadFormUserLogin()
         {
             var form = CheckExists(typeof(FormUserLogin));
@@ -275,7 +292,12 @@ namespace QLVT_DATHANG
         {
             LoadFprt_DetailQuantityPriceImEx();
         }
-
+        
+        private void btn_IOSummary_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadFprt_IOSummary();
+        }
+        
         private void btn_create_login_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadFormUserLogin();
