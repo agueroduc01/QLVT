@@ -120,6 +120,26 @@ namespace QLVT_DATHANG
             return true;
         }
 
+        private void SetUpFullUI()
+        {
+            // Visible Page
+            Program.FormMain.page_cat.Visible = Program.FormMain.page_report.Visible = true;
+            // Visible Buttons
+            Program.FormMain.btn_login.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing; // False
+            Program.FormMain.btn_logout.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime; // True
+
+            if (Program.Role == "ChiNhanh" || Program.Role == "CongTy")
+                Program.FormMain.btn_create_login.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime;
+
+            Program.FormMain.MaximizeBox = true;
+            Program.FormMain.WindowState = FormWindowState.Maximized;
+            Program.FormMain.Show();
+
+            Program.FormMain.MaNV.Text = "Mã Nhân viên: " + Program.EmployeeId.ToString();
+            Program.FormMain.HoTen.Text = "Họ Tên: " + Program.FullName.ToString();
+            Program.FormMain.Nhom.Text = "Chức vụ: " + Program.Role.ToString();
+        }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             if (txb_username.Text.Trim() == "" || txb_password.Text.Trim() == "")
@@ -134,18 +154,7 @@ namespace QLVT_DATHANG
 
             Close();
 
-            Program.FormMain.page_cat.Visible = Program.FormMain.page_report.Visible = true;
-
-            Program.FormMain.btn_login.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInCustomizing; // False
-            Program.FormMain.btn_logout.Visibility = DevExpress.XtraBars.BarItemVisibility.OnlyInRuntime; // True
-
-            Program.FormMain.MaximizeBox = true;
-            Program.FormMain.WindowState = FormWindowState.Maximized;
-            Program.FormMain.Show();
-            
-            Program.FormMain.MaNV.Text = "Employee ID: " + Program.EmployeeId.ToString();
-            Program.FormMain.HoTen.Text = "Full name: " + Program.FullName.ToString();
-            Program.FormMain.Nhom.Text = "Role: " + Program.Role.ToString();
+            SetUpFullUI();
         }
     }
 }

@@ -28,7 +28,6 @@ namespace QLVT_DATHANG
             this.Validate();
             this.bds_VatTu.EndEdit();
             this.tableAdapterManager.UpdateAll(this.DS);
-
         }
 
         private void TurnOnEditingState()
@@ -65,6 +64,10 @@ namespace QLVT_DATHANG
             this.tbla_CTPX.Fill(this.DS.CTPX);
 
             gpc_info.Enabled = false;
+            colMaVT.Caption = "Mã Vật tư";
+            colTenVT.Caption = "Tên Vật tư";
+            colDVT.Caption = "Đơn vị tính";
+            colSoLuongTon.Caption = "Số lượng tồn";
 
             if (Program.Role == "CongTy")
             {
