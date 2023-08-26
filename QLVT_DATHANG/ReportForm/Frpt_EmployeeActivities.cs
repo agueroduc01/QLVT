@@ -76,8 +76,8 @@ namespace QLVT_DATHANG.ReportForm
             this.sP_HotenMaNVTableAdapter.Connection.ConnectionString = Program.ConnectionString;
             this.sP_HotenMaNVTableAdapter.Fill(this.dS.SP_HotenMaNV);
 
-            cmb_HotenNV.SelectedIndex = 0;
-            txt_maNV.Text = cmb_HotenNV.SelectedValue.ToString();
+            //cmb_HotenNV.SelectedIndex = 0;
+            //txt_maNV.Text = cmb_HotenNV.SelectedValue.ToString();
         }
 
         private void btn_Preview_Click(object sender, EventArgs e)

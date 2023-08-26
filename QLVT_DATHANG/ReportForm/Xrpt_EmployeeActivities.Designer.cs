@@ -105,7 +105,7 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 85.83334F;
+            this.TopMargin.HeightF = 80.83334F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
@@ -320,7 +320,9 @@
             this.tableCell3.StyleName = "DetailCaption1";
             this.tableCell3.StylePriority.UseBorderColor = false;
             this.tableCell3.StylePriority.UseBorders = false;
-            this.tableCell3.Text = "Ngay";
+            this.tableCell3.StylePriority.UseTextAlignment = false;
+            this.tableCell3.Text = "Ngày";
+            this.tableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell3.Weight = 0.10677318142621961D;
             // 
             // tableCell4
@@ -332,7 +334,9 @@
             this.tableCell4.StyleName = "DetailCaption1";
             this.tableCell4.StylePriority.UseBorderColor = false;
             this.tableCell4.StylePriority.UseBorders = false;
-            this.tableCell4.Text = "Phieu";
+            this.tableCell4.StylePriority.UseTextAlignment = false;
+            this.tableCell4.Text = "Phiếu";
+            this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell4.Weight = 0.080241025680150582D;
             // 
             // tableCell5
@@ -344,7 +348,9 @@
             this.tableCell5.StyleName = "DetailCaption1";
             this.tableCell5.StylePriority.UseBorderColor = false;
             this.tableCell5.StylePriority.UseBorders = false;
-            this.tableCell5.Text = "LOAI PHIEU";
+            this.tableCell5.StylePriority.UseTextAlignment = false;
+            this.tableCell5.Text = "Loại phiếu";
+            this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell5.Weight = 0.17047540517953727D;
             // 
             // tableCell6
@@ -356,7 +362,9 @@
             this.tableCell6.StyleName = "DetailCaption1";
             this.tableCell6.StylePriority.UseBorderColor = false;
             this.tableCell6.StylePriority.UseBorders = false;
-            this.tableCell6.Text = "Ho Ten KH";
+            this.tableCell6.StylePriority.UseTextAlignment = false;
+            this.tableCell6.Text = "Họ tên khách hàng";
+            this.tableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell6.Weight = 0.15547210693359376D;
             // 
             // tableCell7
@@ -368,7 +376,9 @@
             this.tableCell7.StyleName = "DetailCaption1";
             this.tableCell7.StylePriority.UseBorderColor = false;
             this.tableCell7.StylePriority.UseBorders = false;
-            this.tableCell7.Text = "Ten VT";
+            this.tableCell7.StylePriority.UseTextAlignment = false;
+            this.tableCell7.Text = "Tên vật tư";
+            this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell7.Weight = 0.11188705444335938D;
             // 
             // tableCell8
@@ -381,8 +391,8 @@
             this.tableCell8.StylePriority.UseBorderColor = false;
             this.tableCell8.StylePriority.UseBorders = false;
             this.tableCell8.StylePriority.UseTextAlignment = false;
-            this.tableCell8.Text = "So Luong";
-            this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell8.Text = "Số lượng";
+            this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell8.Weight = 0.14318686852088341D;
             // 
             // tableCell9
@@ -396,8 +406,8 @@
             this.tableCell9.StylePriority.UseBorderColor = false;
             this.tableCell9.StylePriority.UseBorders = false;
             this.tableCell9.StylePriority.UseTextAlignment = false;
-            this.tableCell9.Text = "Don Gia";
-            this.tableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell9.Text = "Đơn giá";
+            this.tableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell9.Weight = 0.12414834829477163D;
             // 
             // tableCell10
@@ -410,8 +420,8 @@
             this.tableCell10.StylePriority.UseBorderColor = false;
             this.tableCell10.StylePriority.UseBorders = false;
             this.tableCell10.StylePriority.UseTextAlignment = false;
-            this.tableCell10.Text = "Tri Gia";
-            this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.tableCell10.Text = "Trị giá";
+            this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell10.Weight = 0.10781592735877404D;
             // 
             // Detail
@@ -837,7 +847,7 @@
             this.DataMember = "SP_EmployeeActivities";
             this.DataSource = this.sqlDataSource1;
             this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
-            this.Margins = new DevExpress.Drawing.DXMargins(100F, 100F, 85.83334F, 100F);
+            this.Margins = new DevExpress.Drawing.DXMargins(100F, 100F, 80.83334F, 100F);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.Title,
             this.GroupCaption1,

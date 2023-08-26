@@ -234,7 +234,7 @@
             this.tableCell3.StylePriority.UseBorderColor = false;
             this.tableCell3.StylePriority.UseBorders = false;
             this.tableCell3.StylePriority.UseTextAlignment = false;
-            this.tableCell3.Text = "TONGSOLUONG";
+            this.tableCell3.Text = "Tổng số lượng";
             this.tableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell3.Weight = 0.17198797655575548D;
             // 
@@ -249,7 +249,7 @@
             this.tableCell4.StylePriority.UseBorderColor = false;
             this.tableCell4.StylePriority.UseBorders = false;
             this.tableCell4.StylePriority.UseTextAlignment = false;
-            this.tableCell4.Text = "TRỊ GIÁ";
+            this.tableCell4.Text = "Tổng trị giá";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell4.Weight = 0.14106522587582734D;
             // 

@@ -142,7 +142,7 @@
             this.tableCell1.StylePriority.UseBorderColor = false;
             this.tableCell1.StylePriority.UseBorders = false;
             this.tableCell1.StylePriority.UseTextAlignment = false;
-            this.tableCell1.Text = "Ma VT";
+            this.tableCell1.Text = "Mã vật tư";
             this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell1.Weight = 0.12753669344508503D;
             // 
@@ -156,7 +156,7 @@
             this.tableCell2.StylePriority.UseBorderColor = false;
             this.tableCell2.StylePriority.UseBorders = false;
             this.tableCell2.StylePriority.UseTextAlignment = false;
-            this.tableCell2.Text = "Ten VT";
+            this.tableCell2.Text = "Tên vật tư";
             this.tableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell2.Weight = 0.59961687832142629D;
             // 
@@ -170,7 +170,7 @@
             this.tableCell3.StylePriority.UseBorderColor = false;
             this.tableCell3.StylePriority.UseBorders = false;
             this.tableCell3.StylePriority.UseTextAlignment = false;
-            this.tableCell3.Text = "DVT";
+            this.tableCell3.Text = "Đơn vị tính";
             this.tableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell3.Weight = 0.11983745967706656D;
             // 
@@ -185,7 +185,7 @@
             this.tableCell4.StylePriority.UseBorderColor = false;
             this.tableCell4.StylePriority.UseBorders = false;
             this.tableCell4.StylePriority.UseTextAlignment = false;
-            this.tableCell4.Text = "So Luong Ton";
+            this.tableCell4.Text = "Số lượng tồn";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.tableCell4.Weight = 0.15300894508136206D;
             // 
